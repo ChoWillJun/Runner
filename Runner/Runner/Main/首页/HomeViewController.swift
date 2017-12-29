@@ -9,11 +9,42 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    @IBOutlet weak var mapView: MAMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("home")
         // Do any additional setup after loading the view.
+        
+        AMapServices.shared().enableHTTPS = true
+        
+//        mapView.delegate = self
+        self.mapView.showsUserLocation = true
+        self.mapView.userTrackingMode = .follow
+        
+        self.setUserLocationRepresentation()
+        
+        self.view.addSubview(mapView)
+    }
+    
+    //MARK: 自定义小蓝点
+    func setUserLocationRepresentation() {
+        //初始化 MAUserLocationRepresentation 对象：
+        let r = MAUserLocationRepresentation()
+        //精度圈是否显示
+        r.showsAccuracyRing = false
+        //是否显示蓝点方向指向
+        r.showsHeadingIndicator = false
+        //调整精度圈填充颜色
+        r.locationDotBgColor = UIColor.clear
+        //调整精度圈边线颜色
+        r.locationDotFillColor = UIColor.clear
+        //调整精度圈边线宽度
+        r.lineWidth = 0
+        //        //调整定位蓝点的图标：
+        //        r.image = UIImage(named: "")
+        //执行
+        mapView?.update(r)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +52,5 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
