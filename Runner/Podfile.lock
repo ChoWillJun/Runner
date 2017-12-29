@@ -1,0 +1,38 @@
+PODS:
+  - AMap3DMap-NO-IDFA (5.6.0):
+    - AMapFoundation-NO-IDFA (~> 1.4)
+  - AMapFoundation-NO-IDFA (1.4.2)
+  - AMapLocation-NO-IDFA (2.5.0):
+    - AMapFoundation-NO-IDFA (~> 1.4)
+  - AMapSearch-NO-IDFA (5.5.0):
+    - AMapFoundation-NO-IDFA (~> 1.4)
+  - DZNEmptyDataSet (1.8.1)
+  - EZSwiftExtensions (1.11)
+  - Kingfisher (4.5.0)
+  - SnapKit (3.2.0)
+  - TZImagePickerController (1.9.8)
+
+DEPENDENCIES:
+  - AMap3DMap-NO-IDFA
+  - AMapLocation-NO-IDFA
+  - AMapSearch-NO-IDFA
+  - DZNEmptyDataSet
+  - EZSwiftExtensions
+  - Kingfisher
+  - SnapKit (~> 3.2.0)
+  - TZImagePickerController
+
+SPEC CHECKSUMS:
+  AMap3DMap-NO-IDFA: c47a44b45eb16b5c8cffc5d1f0699aea727e01a6
+  AMapFoundation-NO-IDFA: 3b9ce87abc6a37c718cc320687469d0b74d5c953
+  AMapLocation-NO-IDFA: be669085a8cc0d22820022fc61d58811d24b4e3a
+  AMapSearch-NO-IDFA: 028a238a14fcb5f1ceda776a996f0af8f22757c4
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  EZSwiftExtensions: 84000042202d9fd574f626cda3064143f27fa767
+  Kingfisher: 26ae0473102b77b575da51960c932431e3745407
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  TZImagePickerController: 3b9413ae5d049b1fdc5b0c720ad283f35b679a50
+
+PODFILE CHECKSUM: 5ead286dc3ce3a6ca23b794503a8dd95092e17a3
+
+COCOAPODS: 1.3.1
