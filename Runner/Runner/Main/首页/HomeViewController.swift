@@ -11,6 +11,13 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var mapView: MAMapView!
+    var coordinateArray: [CLLocationCoordinate2D] = []
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        startLocation()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +25,16 @@ class HomeViewController: UIViewController {
         
         AMapServices.shared().enableHTTPS = true
         
-//        mapView.delegate = self
-        self.mapView.showsUserLocation = true
-        self.mapView.userTrackingMode = .follow
+        initMapView()
         
-        self.setUserLocationRepresentation()
+    }
+    
+    func initMapView() {
+        
+        mapView.delegate = self
+        mapView.zoomLevel = 15.5
+        mapView.distanceFilter = 3.0
+        mapView.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         
         self.view.addSubview(mapView)
     }
@@ -34,7 +46,7 @@ class HomeViewController: UIViewController {
         //精度圈是否显示
         r.showsAccuracyRing = false
         //是否显示蓝点方向指向
-        r.showsHeadingIndicator = false
+        r.showsHeadingIndicator = true
         //调整精度圈填充颜色
         r.locationDotBgColor = UIColor.clear
         //调整精度圈边线颜色
@@ -46,11 +58,63 @@ class HomeViewController: UIViewController {
         //执行
         mapView?.update(r)
     }
+    
+    func startLocation() {
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = MAUserTrackingMode.follow
+        mapView.pausesLocationUpdatesAutomatically = false
+        mapView.allowsBackgroundLocationUpdates = true
+    }
+    
+    func updatePath () {
+        
+        // 每次获取到新的定位点重新绘制路径
+        
+        // 移除掉除之前的overlay
+        let overlays = self.mapView.overlays
+        self.mapView.removeOverlays(overlays)
+        
+        let polyline = MAPolyline(coordinates: &self.coordinateArray, count: UInt(self.coordinateArray.count))
+        self.mapView.add(polyline)
+        
+        // 将最新的点定位到界面正中间显示
+        let lastCoord = self.coordinateArray[self.coordinateArray.count - 1]
+        self.mapView.setCenter(lastCoord, animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+}
 
+extension HomeViewController: MAMapViewDelegate {
+    func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
+        // 地图每次有位置更新时的回调
+        
+        if updatingLocation {
+            // 获取新的定位数据
+            let coordinate = userLocation.coordinate
+            
+            // 添加到保存定位点的数组
+            self.coordinateArray.append(coordinate)
+            
+            updatePath()
+        }
+    }
+    
+    func mapView(_ mapView: MAMapView!, rendererFor overlay: MAOverlay!) -> MAOverlayRenderer! {
+        if overlay.isKind(of: MAPolyline.self) {
+            let polylineView = MAOverlayRenderer(overlay: overlay)
+//            polylineView.lineWidth = 6
+//            polylineView.strokeColor = UIColor(red: 4 / 255.0, green:  181 / 255.0, blue:  108 / 255.0, alpha: 1.0)
+
+            return polylineView
+        }
+        
+        return nil
+
+    }
+    
 }
