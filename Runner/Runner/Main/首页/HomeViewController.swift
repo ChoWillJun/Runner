@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    var isLocated: Bool = false
+    
     @IBOutlet weak var mapView: MAMapView!
     var coordinateArray: [CLLocationCoordinate2D] = []
     
@@ -24,9 +26,12 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         AMapServices.shared().enableHTTPS = true
-        
         initMapView()
         
+        let locationManager = AMapLocationManager()
+        locationManager.delegate = self
+        locationManager.distanceFilter = 3.0
+        locationManager.startUpdatingLocation()
     }
     
     func initMapView() {
@@ -34,9 +39,11 @@ class HomeViewController: UIViewController {
         mapView.delegate = self
         mapView.zoomLevel = 15.5
         mapView.distanceFilter = 3.0
+        mapView.showsUserLocation = true
         mapView.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         
-        self.view.addSubview(mapView)
+        setUserLocationRepresentation()
+        
     }
     
     //MARK: 自定义小蓝点
@@ -81,7 +88,7 @@ class HomeViewController: UIViewController {
         let lastCoord = self.coordinateArray[self.coordinateArray.count - 1]
         self.mapView.setCenter(lastCoord, animated: true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -89,32 +96,29 @@ class HomeViewController: UIViewController {
     
 }
 
-extension HomeViewController: MAMapViewDelegate {
+extension HomeViewController: MAMapViewDelegate, AMapLocationManagerDelegate {
     func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
-        // 地图每次有位置更新时的回调
         
-        if updatingLocation {
-            // 获取新的定位数据
-            let coordinate = userLocation.coordinate
-            
-            // 添加到保存定位点的数组
-            self.coordinateArray.append(coordinate)
-            
-            updatePath()
+        if !updatingLocation {
+            return
         }
+        if userLocation.location.horizontalAccuracy < 0 {
+            return
+        }
+        // only the first locate used.
+        if !self.isLocated {
+            self.isLocated = true
+            self.mapView.userTrackingMode = .follow
+            self.mapView.centerCoordinate = userLocation.location.coordinate
+//            self.actionSearchAround(coordinate:  userLocation.location.coordinate)
+        }
+        
+//        UserLocationDefaul = mapView.userLocation
     }
     
-    func mapView(_ mapView: MAMapView!, rendererFor overlay: MAOverlay!) -> MAOverlayRenderer! {
-        if overlay.isKind(of: MAPolyline.self) {
-            let polylineView = MAOverlayRenderer(overlay: overlay)
-//            polylineView.lineWidth = 6
-//            polylineView.strokeColor = UIColor(red: 4 / 255.0, green:  181 / 255.0, blue:  108 / 255.0, alpha: 1.0)
-
-            return polylineView
-        }
-        
-        return nil
-
+    func amapLocationManager(_ manager: AMapLocationManager!, didUpdate location: CLLocation!) {
+        NSLog("location:{lat:\(location.coordinate.latitude); lon:\(location.coordinate.longitude); accuracy:\(location.horizontalAccuracy)};");
     }
     
 }
+
