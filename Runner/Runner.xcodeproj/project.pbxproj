@@ -14,6 +14,15 @@
 		FC24ED631FF5EED600E950DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC24ED611FF5EED600E950DC /* LaunchScreen.storyboard */; };
 		FC24ED9D1FF606B500E950DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC24ED9B1FF606B500E950DC /* HomeViewController.swift */; };
 		FC24ED9E1FF606B500E950DC /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC24ED9C1FF606B500E950DC /* HomeViewController.xib */; };
+		FCD163DA200F25CE002F0ADC /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD163D8200F25CE002F0ADC /* MyViewController.swift */; };
+		FCD163DB200F25CE002F0ADC /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD163D9200F25CE002F0ADC /* MyViewController.xib */; };
+		FCD163DF200F2607002F0ADC /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD163DD200F2607002F0ADC /* MyTableViewCell.swift */; };
+		FCD163E0200F2607002F0ADC /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD163DE200F2607002F0ADC /* MyTableViewCell.xib */; };
+		FCD163ED200F28F7002F0ADC /* CWInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD163E3200F28F7002F0ADC /* CWInteractiveTransition.m */; };
+		FCD163EE200F28F7002F0ADC /* UIViewController+CWLateralSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD163E6200F28F7002F0ADC /* UIViewController+CWLateralSlide.m */; };
+		FCD163EF200F28F7002F0ADC /* CWLateralSlideAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD163E9200F28F7002F0ADC /* CWLateralSlideAnimator.m */; };
+		FCD163F0200F28F7002F0ADC /* CWDrawerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD163EA200F28F7002F0ADC /* CWDrawerTransition.m */; };
+		FCD163F1200F28F7002F0ADC /* CWLateralSlideConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD163EC200F28F7002F0ADC /* CWLateralSlideConfiguration.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +38,20 @@
 		FC24ED981FF6057900E950DC /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		FC24ED9B1FF606B500E950DC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FC24ED9C1FF606B500E950DC /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		FCD163D8200F25CE002F0ADC /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		FCD163D9200F25CE002F0ADC /* MyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
+		FCD163DD200F2607002F0ADC /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		FCD163DE200F2607002F0ADC /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
+		FCD163E3200F28F7002F0ADC /* CWInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWInteractiveTransition.m; sourceTree = "<group>"; };
+		FCD163E4200F28F7002F0ADC /* CWDrawerTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWDrawerTransition.h; sourceTree = "<group>"; };
+		FCD163E5200F28F7002F0ADC /* CWLateralSlideAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWLateralSlideAnimator.h; sourceTree = "<group>"; };
+		FCD163E6200F28F7002F0ADC /* UIViewController+CWLateralSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CWLateralSlide.m"; sourceTree = "<group>"; };
+		FCD163E7200F28F7002F0ADC /* CWLateralSlideConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWLateralSlideConfiguration.h; sourceTree = "<group>"; };
+		FCD163E8200F28F7002F0ADC /* CWInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWInteractiveTransition.h; sourceTree = "<group>"; };
+		FCD163E9200F28F7002F0ADC /* CWLateralSlideAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWLateralSlideAnimator.m; sourceTree = "<group>"; };
+		FCD163EA200F28F7002F0ADC /* CWDrawerTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWDrawerTransition.m; sourceTree = "<group>"; };
+		FCD163EB200F28F7002F0ADC /* UIViewController+CWLateralSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CWLateralSlide.h"; sourceTree = "<group>"; };
+		FCD163EC200F28F7002F0ADC /* CWLateralSlideConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWLateralSlideConfiguration.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				FC24ED541FF5EED500E950DC /* Runner */,
+				FCD163E1200F28F7002F0ADC /* Tool */,
 				FC24ED531FF5EED500E950DC /* Products */,
 				F3A02F2718A95815DAB901D9 /* Pods */,
 				6B4CD42AA0B8B13A6279FD24 /* Frameworks */,
@@ -104,6 +128,9 @@
 		FC24ED961FF6056400E950DC /* 个人 */ = {
 			isa = PBXGroup;
 			children = (
+				FCD163DC200F25EF002F0ADC /* View */,
+				FCD163D8200F25CE002F0ADC /* MyViewController.swift */,
+				FCD163D9200F25CE002F0ADC /* MyViewController.xib */,
 			);
 			path = "个人";
 			sourceTree = "<group>";
@@ -115,6 +142,40 @@
 				FC24ED9C1FF606B500E950DC /* HomeViewController.xib */,
 			);
 			path = "首页";
+			sourceTree = "<group>";
+		};
+		FCD163DC200F25EF002F0ADC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCD163DD200F2607002F0ADC /* MyTableViewCell.swift */,
+				FCD163DE200F2607002F0ADC /* MyTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FCD163E1200F28F7002F0ADC /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				FCD163E2200F28F7002F0ADC /* CWLateralSlide */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		FCD163E2200F28F7002F0ADC /* CWLateralSlide */ = {
+			isa = PBXGroup;
+			children = (
+				FCD163E3200F28F7002F0ADC /* CWInteractiveTransition.m */,
+				FCD163E4200F28F7002F0ADC /* CWDrawerTransition.h */,
+				FCD163E5200F28F7002F0ADC /* CWLateralSlideAnimator.h */,
+				FCD163E6200F28F7002F0ADC /* UIViewController+CWLateralSlide.m */,
+				FCD163E7200F28F7002F0ADC /* CWLateralSlideConfiguration.h */,
+				FCD163E8200F28F7002F0ADC /* CWInteractiveTransition.h */,
+				FCD163E9200F28F7002F0ADC /* CWLateralSlideAnimator.m */,
+				FCD163EA200F28F7002F0ADC /* CWDrawerTransition.m */,
+				FCD163EB200F28F7002F0ADC /* UIViewController+CWLateralSlide.h */,
+				FCD163EC200F28F7002F0ADC /* CWLateralSlideConfiguration.m */,
+			);
+			path = CWLateralSlide;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,8 +241,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD163E0200F2607002F0ADC /* MyTableViewCell.xib in Resources */,
 				FC24ED631FF5EED600E950DC /* LaunchScreen.storyboard in Resources */,
 				FC24ED601FF5EED600E950DC /* Assets.xcassets in Resources */,
+				FCD163DB200F25CE002F0ADC /* MyViewController.xib in Resources */,
 				FC24ED9E1FF606B500E950DC /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,7 +322,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC24ED561FF5EED600E950DC /* AppDelegate.swift in Sources */,
+				FCD163ED200F28F7002F0ADC /* CWInteractiveTransition.m in Sources */,
+				FCD163EE200F28F7002F0ADC /* UIViewController+CWLateralSlide.m in Sources */,
 				FC24ED5E1FF5EED600E950DC /* Runner.xcdatamodeld in Sources */,
+				FCD163F1200F28F7002F0ADC /* CWLateralSlideConfiguration.m in Sources */,
+				FCD163DA200F25CE002F0ADC /* MyViewController.swift in Sources */,
+				FCD163DF200F2607002F0ADC /* MyTableViewCell.swift in Sources */,
+				FCD163EF200F28F7002F0ADC /* CWLateralSlideAnimator.m in Sources */,
+				FCD163F0200F28F7002F0ADC /* CWDrawerTransition.m in Sources */,
 				FC24ED9D1FF606B500E950DC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

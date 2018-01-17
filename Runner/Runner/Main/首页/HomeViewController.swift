@@ -42,9 +42,8 @@ class HomeViewController: UIViewController {
     }
     
     @objc func addRightButtonAction(_ sender:UIButton) {
-        print("左边按钮")
-        //        CWDrawerAnimationTypeMask
-//        self.cw_showDrawerViewController(MyViewController(), animationType: CWDrawerAnimationType.mask, configuration: nil)
+//        pushVC(MyViewController())
+//        self.cw_showDrawerViewController(MyViewController(), animationType: .default, configuration: nil)
     }
     
     func initMapView() {
