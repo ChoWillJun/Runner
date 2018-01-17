@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
     
     func addSegmentAction() {
         navigationItem.title = "Runner"
-//        navigationItem.leftBarButtonItem = UIBarButtonItem.init(imageName: "tab_title_personalcenter", target: self, action: #selector(addRightButtonAction(_:)))
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "nav_function_personal_default"), style: .plain, target: self, action: #selector(addRightButtonAction(_:)))
     }
     
     @objc func addRightButtonAction(_ sender:UIButton) {
