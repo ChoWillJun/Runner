@@ -25,6 +25,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        addSegmentAction()
+        
         AMapServices.shared().enableHTTPS = true
         initMapView()
         
@@ -34,12 +36,25 @@ class HomeViewController: UIViewController {
         locationManager.startUpdatingLocation()
     }
     
+    func addSegmentAction() {
+        navigationItem.title = "Runner"
+//        navigationItem.leftBarButtonItem = UIBarButtonItem.init(imageName: "tab_title_personalcenter", target: self, action: #selector(addRightButtonAction(_:)))
+    }
+    
+    @objc func addRightButtonAction(_ sender:UIButton) {
+        print("左边按钮")
+        //        CWDrawerAnimationTypeMask
+//        self.cw_showDrawerViewController(MyViewController(), animationType: CWDrawerAnimationType.mask, configuration: nil)
+    }
+    
     func initMapView() {
         
         mapView.delegate = self
         mapView.zoomLevel = 15.5
-        mapView.distanceFilter = 3.0
+        mapView.distanceFilter = 20
         mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
+
         mapView.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         
         setUserLocationRepresentation()
@@ -60,8 +75,8 @@ class HomeViewController: UIViewController {
         r.locationDotFillColor = UIColor.clear
         //调整精度圈边线宽度
         r.lineWidth = 0
-        //        //调整定位蓝点的图标：
-        //        r.image = UIImage(named: "")
+        //调整定位蓝点的图标：
+        r.image = UIImage(named: "icon_location_point")
         //执行
         mapView?.update(r)
     }
