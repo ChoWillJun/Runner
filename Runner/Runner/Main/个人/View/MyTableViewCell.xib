@@ -40,6 +40,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="titleImage" destination="uzm-vu-Tfv" id="bKL-lr-kcu"/>
+                <outlet property="titleLabel" destination="WQZ-Db-ZbB" id="DsU-oG-8Hj"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
