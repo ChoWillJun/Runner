@@ -63,11 +63,13 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MyTableViewCell.self), for: indexPath) as! MyTableViewCell
+        cell.selectionStyle = .none
         cell.addCellData(indexPath: indexPath)
         
         return cell
     }
     
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        cw_push()
+    }
 }
