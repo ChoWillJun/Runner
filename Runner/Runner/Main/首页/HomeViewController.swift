@@ -42,8 +42,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc func addRightButtonAction(_ sender:UIButton) {
-//        pushVC(MyViewController())
-//        self.cw_showDrawerViewController(MyViewController(), animationType: .default, configuration: nil)
+        self.cw_showDrawerViewController(MyViewController(), animationType: .default, configuration: nil)
     }
     
     func initMapView() {
@@ -82,7 +81,7 @@ class HomeViewController: UIViewController {
     
     func startLocation() {
         mapView.showsUserLocation = true
-        mapView.userTrackingMode = MAUserTrackingMode.follow
+//        mapView.userTrackingMode = MAUserTrackingMode.follow
         mapView.pausesLocationUpdatesAutomatically = false
         mapView.allowsBackgroundLocationUpdates = true
     }
