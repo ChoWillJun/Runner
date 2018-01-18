@@ -11,8 +11,17 @@ import UIKit
 class HomeViewController: UIViewController {
     
     var isLocated: Bool = false
+    var isStart: Bool = false
     
     @IBOutlet weak var mapView: MAMapView!
+    @IBOutlet weak var distanceLanel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var stepLabel: UILabel!
+    @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet weak var startAndPauseButton: UIButton!
+    @IBOutlet weak var discardButton: UIButton!
+    @IBOutlet weak var endButton: UIButton!
+    
     var coordinateArray: [CLLocationCoordinate2D] = []
     
     
